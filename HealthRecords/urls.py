@@ -3,7 +3,7 @@ from django.urls import path
 from authentication.views import loginView,signupView,resetView
 from patients.views import patientsView,searchPatientView,addPatientsView,updatePatientsView,daletePatientsView
 from patientsrecords.views import patientsDiagnosisView
-from api.views import get_all_patients
+from api.views import get_all_patients,get_all_patients_records
 
 
 urlpatterns = [
@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # api link
     path('api/patients', get_all_patients),
+    path('api/records', get_all_patients_records),
 ]

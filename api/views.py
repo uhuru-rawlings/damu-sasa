@@ -16,7 +16,19 @@ def get_all_patients(request):
         all_users = []    
     serialize = PatientsSerializer(all_users, many=True)
     
-    return HttpResponse(serialize)
+    return HttpResponse(serialize.data)
+
+api_view('GET')
+def get_all_patients_records(request):
+    all_records = patientRecords.objects.all()
+    
+    if all_records:
+        all_records = all_records
+    else:
+        all_records = []    
+    serialize = PatientsRecordsSerializer(all_records, many=True)
+    
+    return HttpResponse(serialize.data)
         
 
     
