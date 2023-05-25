@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse,
+from django.shortcuts import render, HttpResponse
 from rest_framework.response import Response
 from patientsrecords.models import patientRecords
 from patients.models import Patients
