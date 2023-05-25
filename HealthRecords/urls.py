@@ -3,6 +3,7 @@ from django.urls import path
 from authentication.views import loginView,signupView,resetView
 from patients.views import patientsView,searchPatientView,addPatientsView,updatePatientsView,daletePatientsView
 from patientsrecords.views import patientsDiagnosisView
+from api.views import get_all_patients
 
 
 urlpatterns = [
@@ -14,6 +15,9 @@ urlpatterns = [
     path('patients/add-patients', addPatientsView, name='add-patients'),
     path('patients/update-patients/<int:id>', updatePatientsView, name='update-patients'),
     path('patients/delete-patients/<int:id>', daletePatientsView, name='delete-patients'),
+    
     path('diagnosis/', patientsDiagnosisView, name='diagnosis'),
     path('admin/', admin.site.urls),
+    # api link
+    path('api/patients', get_all_patients),
 ]

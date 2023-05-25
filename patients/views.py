@@ -16,7 +16,7 @@ def patientsView(request):
 
 def searchPatientView(request):
     if request.method == "POST":
-        search = request.POST['seach']
+        search = request.POST.get('user_search')
         
         all_patients = Patients.objects.filter(Q(Fname = search)| Q(Lname = search) | Q(IdNumber = search)).order_by("-id")
         

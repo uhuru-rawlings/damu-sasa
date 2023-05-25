@@ -5,6 +5,7 @@
     <div class="py-5">
         <div class="col-sm-6 m-auto">
             <form action="" method="post">
+                {% csrf_token %}
                 {% if error == ''%}
                 {% else %}
                     <div class="alert alert-danger">{{ error }}</div>
