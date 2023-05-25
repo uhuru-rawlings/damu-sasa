@@ -1,0 +1,24 @@
+.col-sm-4 .form-control{
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid #DEE2E6;
+}
+.col-sm-4 .btn-primary{
+    height: 55px;
+    border-radius: 5px;
+}
+.col-sm-4{
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 25px;
+}
+body{
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    background-color: #e5f2ff;
+}
+
+form a{
+    text-decoration: none;
+}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="py-5">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>IdNumber</th>
+                        <th>PatientsNo</th>
+                        <th>FromTown</th>
+                        <th>FromVillage</th>
+                        <th>lastVisit</th>
+                        <th>dateAdded</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if patients %}
+                        {% for patient in patients %}
+                            <tr>
+                                <td>{{ patient.Fname }} {{ patient.Lname }}</td>
+                                <td>{{ patient.IdNumber }}</td>
+                                <td>{{ patient.PatientsNo }}</td>
+                                <td>{{ patient.FromTown }}</td>
+                                <td>{{ patient.FromVillage }}</td>
+                                <td>{{ patient.lastVisit }}</td>
+                                <td>{{ patient.dateAdded }}</td>
+                                <td>
+                                    <div class="d-flex justify-content-between">
+                                        <a class="bg-primary" href="{% url 'update-patients' patient.id %}">Edit</a> 
+                                        <a class="bg-danger" href="{% url 'delete-patients' patient.id %}">Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="7" class="text-center">No record</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

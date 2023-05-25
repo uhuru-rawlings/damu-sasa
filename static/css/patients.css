@@ -1,0 +1,23 @@
+.form-control{
+    height: 50px;
+    border-radius: 3px;
+    border: 2px solid #DEE2E6;
+}
+.btn-primary{
+    height: 58px;
+    border-radius: 3px;
+}
+td a{
+    padding: 5px;
+    border-radius: 2px;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-right: 3px;
+}
+
+.navbar .btn-outline-success{
+    height: 50px;
+}
+textarea.form-control {
+    height: 200px;
+}

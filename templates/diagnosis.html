@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="py-5">
+        <div class="col-sm-6 m-auto">
+            <form action="" method="post">
+                {% if error == ''%}
+                {% else %}
+                    <div class="alert alert-danger">{{ error }}</div>
+                {%  endif%}
+
+                {% if success == ''%}
+                {% else %}
+                    <div class="alert alert-success">{{ success }}</div>
+                {%  endif%}
+
+                <div class="form-group mb-3">
+                    <label for="patient">Patient</label>
+                    <select name="patient" id="patient" class="form-control">
+                        {% if patients %}
+                            {% for patient in patients %}
+                                <option value="{{ patient.id }}">{{ patient.Fname }} {{ patient.Lname }}</option>
+                            {% endfor %}
+                        {% endif %}
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="diagnosis">Triage</label>
+                    <textarea name="diagnosis" id="diagnosis" cols="30" rows="10" class="form-control" placeholder="Type your diagnosis here"></textarea>
+                </div>
+                <input type="submit" value="Save Records" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+    <script>
+        tinymce.init({
+          selector: 'textarea',
+          plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+          toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        });
+    </script>
+</div>
+{% endblock %}
