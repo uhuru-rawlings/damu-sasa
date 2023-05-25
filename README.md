@@ -30,3 +30,11 @@
     <li>get patients <code>http://127.0.0.1:8000/api/patients</code></li>
     <li>get patients details <code>http://127.0.0.1:8000/api/records</code></li>
 </ul>
+
+### Why i chose to use python
+
+<ul>
+    <li>I chose to use python because, it improves development speed by making easy some operations</li>
+    <li>It make it easy to write rest apis</li>
+    <li>It makes it easy to manipulate data in the database</li>
+</ul>
