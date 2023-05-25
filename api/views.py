@@ -7,7 +7,7 @@ from rest_framework.decorators import api_view
 from .serializer import PatientsSerializer,PatientsRecordsSerializer
 
 # Create your views here.
-api_view(['GET'])
+@api_view(['GET'])
 def get_all_patients(request):
     all_users = Patients.objects.all()
     
@@ -19,7 +19,7 @@ def get_all_patients(request):
     
     return Response(serialize.data)
 
-api_view(['GET'])
+@api_view(['GET'])
 def get_all_patients_records(request):
     all_records = patientRecords.objects.all()
     
